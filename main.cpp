@@ -12,7 +12,7 @@ constexpr int STOPED = 0, RUNNING = 1, IDLE = 2;
 
 constexpr int TID_IDLE = 0;
 
-struct umthread {
+struct umthread_t {
     ucontext_t ctx;
 
     void(*pfun)(void *);
@@ -27,7 +27,7 @@ constexpr int number_of_threads = 5;
 int curr = 0;
 int previous = 0;
 
-umthread threads[number_of_threads];
+umthread_t threads[number_of_threads];
 
 void idle_fun(void *) {
 
@@ -79,7 +79,7 @@ void schedule() {
 }
 
 
-void umthread_entry(umthread *thread) {
+void umthread_entry(umthread_t *thread) {
 
     thread->pfun(thread->param);
     thread->status = STOPED;
