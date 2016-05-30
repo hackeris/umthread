@@ -134,4 +134,4 @@ int init() {
     return 0;
 }
 
-static int x = init();
+int x = init();

@@ -6,6 +6,8 @@
 #define UMTHREAD_T_UMTHREAD_H
 
 
+extern int x;
+
 extern int umthread_create(void(*pfun)(void *), void *param);
 
 

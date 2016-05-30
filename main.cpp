@@ -27,6 +27,7 @@ int main() {
     umthread_create(hello, NULL);
     umthread_create(hello, NULL);
     umthread_create(world, NULL);
+    umthread_create(world, NULL);
 
     return 0;
 }
