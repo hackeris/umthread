@@ -24,7 +24,7 @@ struct umthread_t {
     int status;
 };
 
-constexpr int number_of_threads = 5;
+constexpr int number_of_threads = 100;
 int curr = 0;
 int previous = 0;
 
@@ -157,6 +157,6 @@ int main() {
     ticks_timer.it_value.tv_usec = 10000;
     setitimer(ITIMER_REAL, &ticks_timer, NULL);
 
-    idle_fun(NULL);
+    while (find_runnable_thread() != 0);
     return 0;
 }
