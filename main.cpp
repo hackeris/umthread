@@ -20,10 +20,6 @@ public:
         func();
     }
 
-    ~CLambdaRunnable() override {
-
-    }
-
 private:
     std::function<void(void)> func;
 };
